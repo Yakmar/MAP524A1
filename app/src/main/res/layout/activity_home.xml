@@ -1,0 +1,67 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".HomeActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/welcome_text"
+        android:id="@+id/welcomeText"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <AutoCompleteTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/analyticSearch"
+        android:hint="Analytic Title"
+        android:layout_below="@+id/welcomeText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <AutoCompleteTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/collectiveSearch"
+        android:hint="Collective Title"
+        android:layout_below="@+id/analyticSearch"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <AutoCompleteTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/subordinateSearch"
+        android:hint="Subordinate Title"
+        android:layout_below="@+id/collectiveSearch"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <AutoCompleteTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/authorSearch"
+        android:hint="Author"
+        android:layout_below="@+id/subordinateSearch"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <AutoCompleteTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/publisherSearch"
+        android:hint="Publisher"
+        android:layout_below="@+id/authorSearch"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <AutoCompleteTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/documentTypeSearch"
+        android:hint="Document Type"
+        android:layout_below="@+id/publisherSearch"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>

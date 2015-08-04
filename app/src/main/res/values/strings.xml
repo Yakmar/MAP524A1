@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">2013 E. Canada Journal Search</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="welcome_text">Welcome to Journal Search. Start by searching for a term in the correct field. Select the term once it appears in the dropdown box.</string>
+    <string name="placeholderText">PlaceHolder Text</string>
+    <string name="collectiveTitle">Collective Title</string>
+    <string name="subordinateTitle">Subordinate Title</string>
+    <string name="author">Author</string>
+    <string name="editor">Editor</string>
+    <string name="publisher">Publisher</string>
+    <string name="city">City</string>
+</resources>
