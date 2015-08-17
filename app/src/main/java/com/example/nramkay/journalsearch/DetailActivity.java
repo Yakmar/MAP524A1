@@ -81,9 +81,9 @@ public class DetailActivity extends AppCompatActivity {
         pageEnd.setText(article.getPageEndDerniRePage());
         issue.setText(article.getIssueNumRo());
         year.setText(article.getYearAnnE());
-        url.setText(article.getURLAdresseURL());
         doi.setText(article.getDOIIdentificateurDObjetNumRique());
         documentType.setText(article.getDocumentTypeTypeDeDocument());
         volumeChapter.setText(article.getVolumeChapterVolumeChapitre());
+        url.setText(article.getURLAdresseURL());
     }
 }

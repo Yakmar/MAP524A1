@@ -24,4 +24,5 @@
     <item>{"Issue / Num\u00e9ro": "1-2", "Title, Analytic / Titre, Analytique": "\"The Rainmakers\": the Meteorological Service of Canada and post-war weather modification research", "Page end / Derni\u00e8re Page": "37", "URL / Adresse URL   ": "", "Publisher / Maison d'\u00e9dition": "", "City / Ville": "", "Year / Ann\u00e9e": "2013", "Page start / Premi\u00e8re Page": "5", "Document Type / Type de document": "Article", "DOI / Identificateur d'objet num\u00e9rique": "10.7202/1013979ar", "Title, Collective / Titre, Collectif": "Scientia Canadensis", "Editors / \u00c9diteurs": "", "Title - Subordinate / Titre - Subalterne": "", "Volume - Chapter / Volume - Chapitre ": "35", "\ufeff\"Authors / Auteurs\"": "Wallace, M.L."}</item>
 </string-array>
     <string name="title_activity_detail">DetailActivity</string>
+    <string name="title_activity_web_view">WebViewActivity</string>
 </resources>
