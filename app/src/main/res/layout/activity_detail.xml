@@ -1,136 +1,272 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:orientation="vertical"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.nramkay.journalsearch.DetailActivity">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Analytic Title:"
-        android:id="@+id/detailAnalyticTitleText"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:id="@+id/detailAnalyticTitleText"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
+        android:layout_gravity="center"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/placeholderText"
-        android:id="@+id/detailAnalyticTitle"
-        android:layout_below="@+id/detailAnalyticTitleText"
-        android:layout_centerHorizontal="true" />
+        android:id="@+id/detailAnalyticTitle" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/collectiveTitle"
         android:id="@+id/collectiveTitleText"
-        android:layout_below="@+id/detailAnalyticTitle"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="35dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/placeholderText"
-        android:id="@+id/detailCollectiveTitle"
-        android:layout_below="@+id/collectiveTitleText"
-        android:layout_centerHorizontal="true" />
+        android:id="@+id/detailCollectiveTitle" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/subordinateTitle"
         android:id="@+id/subordinateTitleText"
-        android:layout_below="@+id/detailCollectiveTitle"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="35dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/placeholderText"
-        android:id="@+id/detailSubordinateTitle"
-        android:layout_below="@+id/subordinateTitleText"
-        android:layout_centerHorizontal="true" />
+        android:id="@+id/detailSubordinateTitle" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/author"
         android:id="@+id/detailAuthorText"
-        android:layout_below="@+id/detailSubordinateTitle"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="35dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/placeholderText"
-        android:id="@+id/detailAuthor"
-        android:layout_below="@+id/detailAuthorText"
-        android:layout_centerHorizontal="true" />
+        android:id="@+id/detailAuthor" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/editor"
-        android:id="@+id/detailEditorText"
-        android:layout_below="@+id/detailAuthor"
-        android:layout_centerHorizontal="true"
+        android:id="@+id/detailEditorTextTitle"
         android:layout_marginTop="35dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/placeholderText"
-        android:id="@+id/detailEditor"
-        android:layout_below="@+id/detailEditorText"
-        android:layout_centerHorizontal="true" />
+        android:id="@+id/detailEditor"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/publisher"
-        android:id="@+id/edtailPublisherText"
-        android:layout_below="@+id/detailEditor"
-        android:layout_centerHorizontal="true"
+        android:id="@+id/detailPublisherTextTitle"
         android:layout_marginTop="35dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/placeholderText"
-        android:id="@+id/detailPublisher"
-        android:layout_below="@+id/edtailPublisherText"
-        android:layout_centerHorizontal="true" />
+        android:id="@+id/detailPublisher"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/city"
-        android:id="@+id/detailCityText"
-        android:layout_below="@+id/detailPublisher"
-        android:layout_centerHorizontal="true"
+        android:id="@+id/detailCityTextTitle"
         android:layout_marginTop="35dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/placeholderText"
-        android:id="@+id/detailCity"
-        android:layout_below="@+id/detailCityText"
-        android:layout_centerHorizontal="true" />
-</RelativeLayout>
+        android:id="@+id/detailCity"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/pageStart"
+        android:id="@+id/detailPageStartTextTitle"
+        android:layout_marginTop="35dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/placeholderText"
+        android:id="@+id/detailPageStart"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/pageEnd"
+        android:id="@+id/detailPageEndTextTitle"
+        android:layout_marginTop="35dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/placeholderText"
+        android:id="@+id/detailPageEnd" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/issue"
+        android:id="@+id/detailIssueTextTitle"
+        android:layout_marginTop="35dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/placeholderText"
+        android:id="@+id/detailIssue"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/year"
+        android:id="@+id/detailYearTextTitle"
+        android:layout_marginTop="35dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/placeholderText"
+        android:id="@+id/detailYear"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/volume"
+        android:id="@+id/detailVolumeTextTitle"
+        android:layout_marginTop="35dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/placeholderText"
+        android:id="@+id/detailVolume"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/docType"
+        android:id="@+id/detailDocTypeTextTitle"
+        android:layout_marginTop="35dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/placeholderText"
+        android:id="@+id/detailDocType"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/doi"
+        android:id="@+id/detailDOITextTitle"
+        android:layout_marginTop="35dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/placeholderText"
+        android:id="@+id/detailDOI"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/url"
+        android:id="@+id/detailURLTextTitle"
+        android:layout_marginTop="35dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/placeholderText"
+        android:id="@+id/detailURL"/>
+
+</LinearLayout>
+
+</ScrollView>
