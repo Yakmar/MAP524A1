@@ -1,63 +1,61 @@
 package com.example.nramkay.journalsearch;
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 public class Article {
 
     @SerializedName("Issue / Num\u00e9ro")
     @Expose
-    private String Issue;
+    private String IssueNumRo;
     @SerializedName("Title, Analytic / Titre, Analytique")
     @Expose
-    private String TitleAnalytic;
+    private String TitleAnalyticTitreAnalytique;
     @SerializedName("Page end / Derni\u00e8re Page")
     @Expose
-    private String PageEnd;
+    private String PageEndDerniRePage;
     @SerializedName("URL / Adresse URL ")
     @Expose
-    private String URL;
+    private String URLAdresseURL;
     @SerializedName("Publisher / Maison d'\u00e9dition")
     @Expose
-    private String Publisher;
+    private String PublisherMaisonDDition;
     @SerializedName("City / Ville")
     @Expose
-    private String City;
+    private String CityVille;
     @SerializedName("Year / Ann\u00e9e")
     @Expose
-    private String Year;
+    private String YearAnnE;
     @SerializedName("Page start / Premi\u00e8re Page")
     @Expose
-    private String PageStart;
+    private String PageStartPremiRePage;
     @SerializedName("Document Type / Type de document")
     @Expose
-    private String DocumentType;
+    private String DocumentTypeTypeDeDocument;
     @SerializedName("DOI / Identificateur d'objet num\u00e9rique")
     @Expose
-    private String DOI;
+    private String DOIIdentificateurDObjetNumRique;
     @SerializedName("Title, Collective / Titre, Collectif")
     @Expose
-    private String TitleCollective;
+    private String TitleCollectiveTitreCollectif;
     @SerializedName("Editors / \u00c9diteurs")
     @Expose
-    private String Editors;
+    private String EditorsDiteurs;
     @SerializedName("Title - Subordinate / Titre - Subalterne")
     @Expose
-    private String TitleSubordinate;
+    private String TitleSubordinateTitreSubalterne;
     @SerializedName("Volume - Chapter / Volume - Chapitre ")
     @Expose
-    private String VolumeChapter;
+    private String VolumeChapterVolumeChapitre;
     @SerializedName("\ufeff\"Authors / Auteurs\"")
     @Expose
-    private String Authors;
+    private String AuthorsAuteurs;
 
     /**
      *
      * @return
-     * The Issue
+     * The IssueNumRo
      */
-    public String getIssue() {
-        return Issue;
+    public String getIssueNumRo() {
+        return IssueNumRo;
     }
 
     /**
@@ -65,17 +63,17 @@ public class Article {
      * @param IssueNumRo
      * The Issue / Numéro
      */
-    public void setIssue(String IssueNumRo) {
-        this.Issue = IssueNumRo;
+    public void setIssueNumRo(String IssueNumRo) {
+        this.IssueNumRo = IssueNumRo;
     }
 
     /**
      *
      * @return
-     * The TitleAnalytic
+     * The TitleAnalyticTitreAnalytique
      */
-    public String getTitleAnalytic() {
-        return TitleAnalytic;
+    public String getTitleAnalyticTitreAnalytique() {
+        return TitleAnalyticTitreAnalytique;
     }
 
     /**
@@ -83,17 +81,17 @@ public class Article {
      * @param TitleAnalyticTitreAnalytique
      * The Title, Analytic / Titre, Analytique
      */
-    public void setTitleAnalytic(String TitleAnalyticTitreAnalytique) {
-        this.TitleAnalytic = TitleAnalyticTitreAnalytique;
+    public void setTitleAnalyticTitreAnalytique(String TitleAnalyticTitreAnalytique) {
+        this.TitleAnalyticTitreAnalytique = TitleAnalyticTitreAnalytique;
     }
 
     /**
      *
      * @return
-     * The PageEnd
+     * The PageEndDerniRePage
      */
-    public String getPageEnd() {
-        return PageEnd;
+    public String getPageEndDerniRePage() {
+        return PageEndDerniRePage;
     }
 
     /**
@@ -101,35 +99,35 @@ public class Article {
      * @param PageEndDerniRePage
      * The Page end / Dernière Page
      */
-    public void setPageEnd(String PageEndDerniRePage) {
-        this.PageEnd = PageEndDerniRePage;
+    public void setPageEndDerniRePage(String PageEndDerniRePage) {
+        this.PageEndDerniRePage = PageEndDerniRePage;
     }
 
     /**
      *
      * @return
-     * The URL
+     * The URLAdresseURL
      */
-    public String getURL() {
-        return URL;
+    public String getURLAdresseURL() {
+        return URLAdresseURL;
     }
 
     /**
      *
-     * @param URL
+     * @param URLAdresseURL
      * The URL / Adresse URL
      */
-    public void setURL(String URL) {
-        this.URL = URL;
+    public void setURLAdresseURL(String URLAdresseURL) {
+        this.URLAdresseURL = URLAdresseURL;
     }
 
     /**
      *
      * @return
-     * The Publisher
+     * The PublisherMaisonDDition
      */
-    public String getPublisher() {
-        return Publisher;
+    public String getPublisherMaisonDDition() {
+        return PublisherMaisonDDition;
     }
 
     /**
@@ -137,17 +135,17 @@ public class Article {
      * @param PublisherMaisonDDition
      * The Publisher / Maison d'édition
      */
-    public void setPublisher(String PublisherMaisonDDition) {
-        this.Publisher = PublisherMaisonDDition;
+    public void setPublisherMaisonDDition(String PublisherMaisonDDition) {
+        this.PublisherMaisonDDition = PublisherMaisonDDition;
     }
 
     /**
      *
      * @return
-     * The City
+     * The CityVille
      */
-    public String getCity() {
-        return City;
+    public String getCityVille() {
+        return CityVille;
     }
 
     /**
@@ -155,17 +153,17 @@ public class Article {
      * @param CityVille
      * The City / Ville
      */
-    public void setCity(String CityVille) {
-        this.City = CityVille;
+    public void setCityVille(String CityVille) {
+        this.CityVille = CityVille;
     }
 
     /**
      *
      * @return
-     * The Year
+     * The YearAnnE
      */
-    public String getYear() {
-        return Year;
+    public String getYearAnnE() {
+        return YearAnnE;
     }
 
     /**
@@ -173,17 +171,17 @@ public class Article {
      * @param YearAnnE
      * The Year / Année
      */
-    public void setYear(String YearAnnE) {
-        this.Year = YearAnnE;
+    public void setYearAnnE(String YearAnnE) {
+        this.YearAnnE = YearAnnE;
     }
 
     /**
      *
      * @return
-     * The PageStart
+     * The PageStartPremiRePage
      */
-    public String getPageStart() {
-        return PageStart;
+    public String getPageStartPremiRePage() {
+        return PageStartPremiRePage;
     }
 
     /**
@@ -191,17 +189,17 @@ public class Article {
      * @param PageStartPremiRePage
      * The Page start / Première Page
      */
-    public void setPageStart(String PageStartPremiRePage) {
-        this.PageStart = PageStartPremiRePage;
+    public void setPageStartPremiRePage(String PageStartPremiRePage) {
+        this.PageStartPremiRePage = PageStartPremiRePage;
     }
 
     /**
      *
      * @return
-     * The DocumentType
+     * The DocumentTypeTypeDeDocument
      */
-    public String getDocumentType() {
-        return DocumentType;
+    public String getDocumentTypeTypeDeDocument() {
+        return DocumentTypeTypeDeDocument;
     }
 
     /**
@@ -209,35 +207,35 @@ public class Article {
      * @param DocumentTypeTypeDeDocument
      * The Document Type / Type de document
      */
-    public void setDocumentType(String DocumentTypeTypeDeDocument) {
-        this.DocumentType = DocumentTypeTypeDeDocument;
+    public void setDocumentTypeTypeDeDocument(String DocumentTypeTypeDeDocument) {
+        this.DocumentTypeTypeDeDocument = DocumentTypeTypeDeDocument;
     }
 
     /**
      *
      * @return
-     * The DOI
+     * The DOIIdentificateurDObjetNumRique
      */
-    public String getDOI() {
-        return DOI;
+    public String getDOIIdentificateurDObjetNumRique() {
+        return DOIIdentificateurDObjetNumRique;
     }
 
     /**
      *
-     * @param DOI
+     * @param DOIIdentificateurDObjetNumRique
      * The DOI / Identificateur d'objet numérique
      */
-    public void setDOI(String DOI) {
-        this.DOI = DOI;
+    public void setDOIIdentificateurDObjetNumRique(String DOIIdentificateurDObjetNumRique) {
+        this.DOIIdentificateurDObjetNumRique = DOIIdentificateurDObjetNumRique;
     }
 
     /**
      *
      * @return
-     * The TitleCollective
+     * The TitleCollectiveTitreCollectif
      */
-    public String getTitleCollective() {
-        return TitleCollective;
+    public String getTitleCollectiveTitreCollectif() {
+        return TitleCollectiveTitreCollectif;
     }
 
     /**
@@ -245,17 +243,17 @@ public class Article {
      * @param TitleCollectiveTitreCollectif
      * The Title, Collective / Titre, Collectif
      */
-    public void setTitleCollective(String TitleCollectiveTitreCollectif) {
-        this.TitleCollective = TitleCollectiveTitreCollectif;
+    public void setTitleCollectiveTitreCollectif(String TitleCollectiveTitreCollectif) {
+        this.TitleCollectiveTitreCollectif = TitleCollectiveTitreCollectif;
     }
 
     /**
      *
      * @return
-     * The Editors
+     * The EditorsDiteurs
      */
-    public String getEditors() {
-        return Editors;
+    public String getEditorsDiteurs() {
+        return EditorsDiteurs;
     }
 
     /**
@@ -263,17 +261,17 @@ public class Article {
      * @param EditorsDiteurs
      * The Editors / Éditeurs
      */
-    public void setEditors(String EditorsDiteurs) {
-        this.Editors = EditorsDiteurs;
+    public void setEditorsDiteurs(String EditorsDiteurs) {
+        this.EditorsDiteurs = EditorsDiteurs;
     }
 
     /**
      *
      * @return
-     * The TitleSubordinate
+     * The TitleSubordinateTitreSubalterne
      */
-    public String getTitleSubordinate() {
-        return TitleSubordinate;
+    public String getTitleSubordinateTitreSubalterne() {
+        return TitleSubordinateTitreSubalterne;
     }
 
     /**
@@ -281,17 +279,17 @@ public class Article {
      * @param TitleSubordinateTitreSubalterne
      * The Title - Subordinate / Titre - Subalterne
      */
-    public void setTitleSubordinate(String TitleSubordinateTitreSubalterne) {
-        this.TitleSubordinate = TitleSubordinateTitreSubalterne;
+    public void setTitleSubordinateTitreSubalterne(String TitleSubordinateTitreSubalterne) {
+        this.TitleSubordinateTitreSubalterne = TitleSubordinateTitreSubalterne;
     }
 
     /**
      *
      * @return
-     * The VolumeChapter
+     * The VolumeChapterVolumeChapitre
      */
-    public String getVolumeChapter() {
-        return VolumeChapter;
+    public String getVolumeChapterVolumeChapitre() {
+        return VolumeChapterVolumeChapitre;
     }
 
     /**
@@ -299,17 +297,17 @@ public class Article {
      * @param VolumeChapterVolumeChapitre
      * The Volume - Chapter / Volume - Chapitre
      */
-    public void setVolumeChapter(String VolumeChapterVolumeChapitre) {
-        this.VolumeChapter = VolumeChapterVolumeChapitre;
+    public void setVolumeChapterVolumeChapitre(String VolumeChapterVolumeChapitre) {
+        this.VolumeChapterVolumeChapitre = VolumeChapterVolumeChapitre;
     }
 
     /**
      *
      * @return
-     * The Authors
+     * The AuthorsAuteurs
      */
-    public String getAuthors() {
-        return Authors;
+    public String getAuthorsAuteurs() {
+        return AuthorsAuteurs;
     }
 
     /**
@@ -317,8 +315,8 @@ public class Article {
      * @param AuthorsAuteurs
      * The ﻿"Authors / Auteurs"
      */
-    public void setAuthors(String AuthorsAuteurs) {
-        this.Authors = AuthorsAuteurs;
+    public void setAuthorsAuteurs(String AuthorsAuteurs) {
+        this.AuthorsAuteurs = AuthorsAuteurs;
     }
 
 }
