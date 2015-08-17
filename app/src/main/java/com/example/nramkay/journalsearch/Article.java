@@ -12,7 +12,7 @@ public class Article {
     @SerializedName("Page end / Derni\u00e8re Page")
     @Expose
     private String PageEndDerniRePage;
-    @SerializedName("URL / Adresse URL ")
+    @SerializedName("URL / Adresse URL   ")
     @Expose
     private String URLAdresseURL;
     @SerializedName("Publisher / Maison d'\u00e9dition")

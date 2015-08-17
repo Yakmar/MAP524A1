@@ -64,6 +64,7 @@ public class HomeActivity extends AppCompatActivity {
         }
         InitializeData();
         GetHandles();
+        ClearFields();
         SetAdapters();
         SetItemClickListeners();
 
@@ -111,7 +112,9 @@ public class HomeActivity extends AppCompatActivity {
         jsonString.add("{\"Issue / Num\\u00e9ro\": \"\", \"Title, Analytic / Titre, Analytique\": \"A global tropospheric ozone climatology from trajectory-mapped ozone soundings \", \"Page end / Derni\\u00e8re Page\": \"10675\", \"URL / Adresse URL   \": \"\", \"Publisher / Maison d'\\u00e9dition\": \"\", \"City / Ville\": \"\", \"Year / Ann\\u00e9e\": \"2013\", \"Page start / Premi\\u00e8re Page\": \"10659\", \"Document Type / Type de document\": \"Article\", \"DOI / Identificateur d'objet num\\u00e9rique\": \"10.5194/acp-13-10659-2013\", \"Title, Collective / Titre, Collectif\": \"Atmospheric Chemistry and Physics\", \"Editors / \\u00c9diteurs\": \"\", \"Title - Subordinate / Titre - Subalterne\": \"\", \"Volume - Chapter / Volume - Chapitre \": \"13\", \"\\ufeff\\\"Authors / Auteurs\\\"\": \"Liu, G., Liu, J., Tarasick, D.W., Fioletov, V.E., Jin, J.J, Moeini, O., Liu, X., Sioris, C.E., and Osman, M.\"}");
         jsonString.add("{\"Issue / Num\\u00e9ro\": \"1\", \"Title, Analytic / Titre, Analytique\": \"A high-resolution canadian lightning climatology\", \"Page end / Derni\\u00e8re Page\": \"59\", \"URL / Adresse URL   \": \"\", \"Publisher / Maison d'\\u00e9dition\": \"\", \"City / Ville\": \"\", \"Year / Ann\\u00e9e\": \"2013\", \"Page start / Premi\\u00e8re Page\": \"50\", \"Document Type / Type de document\": \"Article\", \"DOI / Identificateur d'objet num\\u00e9rique\": \"10.1080/07055900.2012.755946\", \"Title, Collective / Titre, Collectif\": \"Atmosphere - Ocean\", \"Editors / \\u00c9diteurs\": \"\", \"Title - Subordinate / Titre - Subalterne\": \"\", \"Volume - Chapter / Volume - Chapitre \": \"51\", \"\\ufeff\\\"Authors / Auteurs\\\"\": \"Shephard M.W., Morris R., Burrows W.R., Welsh L.\"}");
         jsonString.add("{\"Issue / Num\\u00e9ro\": \"3\", \"Title, Analytic / Titre, Analytique\": \"A hybrid zone between Canada geese (Branta canadensis) and Cackling geese (B. hutchinsii)\", \"Page end / Derni\\u00e8re Page\": \"500\", \"URL / Adresse URL   \": \"\", \"Publisher / Maison d'\\u00e9dition\": \"\", \"City / Ville\": \"\", \"Year / Ann\\u00e9e\": \"2013\", \"Page start / Premi\\u00e8re Page\": \"487\", \"Document Type / Type de document\": \"Article\", \"DOI / Identificateur d'objet num\\u00e9rique\": \"10.1525/auk.2013.12196\", \"Title, Collective / Titre, Collectif\": \"Auk\", \"Editors / \\u00c9diteurs\": \"\", \"Title - Subordinate / Titre - Subalterne\": \"\", \"Volume - Chapter / Volume - Chapitre \": \"130\", \"\\ufeff\\\"Authors / Auteurs\\\"\": \"Leafloor J.O., Moore J.A., Scribner K.T.\"}");
-
+        jsonString.add("{\"Issue / Num\\u00e9ro\": \"\", \"Title, Analytic / Titre, Analytique\": \"Arctic terrestrial biodiversity monitoring plan\", \"Page end / Derni\\u00e8re Page\": \"164\", \"URL / Adresse URL   \": \"http://www.caff.is/monitoring-series/256-arctic-terrestrial-biodiversity-monitoring-plan\", \"Publisher / Maison d'\\u00e9dition\": \"\", \"City / Ville\": \"\", \"Year / Ann\\u00e9e\": \"2013\", \"Page start / Premi\\u00e8re Page\": \"1\", \"Document Type / Type de document\": \"Report\", \"DOI / Identificateur d'objet num\\u00e9rique\": \"\", \"Title, Collective / Titre, Collectif\": \"CAFF Monitoring Series Report\", \"Editors / \\u00c9diteurs\": \"\", \"Title - Subordinate / Titre - Subalterne\": \"\", \"Volume - Chapter / Volume - Chapitre \": \"7\", \"\\ufeff\\\"Authors / Auteurs\\\"\": \"Christensen, T., J. Payne, M. Doyle, G. Ibarguchi, J.J. Taylor, N.M. Schmidt, M. Gill, M. Svoboda, M. Aronsson, C. Behe, C. Buddle, C. Cuyler, A.M. Fosaa, A.D. Fox, S. Heidmarsson, P. Henning Krogh, J. Madsen, D. McLennan, J. Nymand, C. Rosa, J. Salmela, R. Shuchman, M. Soloviev and M. Wedege\"}");
+        jsonString.add("{\"Issue / Num\\u00e9ro\": \"\", \"Title, Analytic / Titre, Analytique\": \"An Analysis of Spatial and Temporal Trends and Patterns in Western Canadian Runoff: A CROCWR Component\", \"Page end / Derni\\u00e8re Page\": \"56\", \"URL / Adresse URL   \": \"http://www.19thnrb.com/docs/19thNRB_Proceedings_Web2013-9-19.pdf\", \"Publisher / Maison d'\\u00e9dition\": \"\", \"City / Ville\": \"\", \"Year / Ann\\u00e9e\": \"2013\", \"Page start / Premi\\u00e8re Page\": \"45\", \"Document Type / Type de document\": \"Conference Proceedings\", \"DOI / Identificateur d'objet num\\u00e9rique\": \"\", \"Title, Collective / Titre, Collectif\": \"Proceedings of the 19th International Northern Research Basins Symposium and Workshop\", \"Editors / \\u00c9diteurs\": \"\", \"Title - Subordinate / Titre - Subalterne\": \"\", \"Volume - Chapter / Volume - Chapitre \": \"\", \"\\ufeff\\\"Authors / Auteurs\\\"\": \"Bawden, A.J., D.H. Burn and T.D. Prowse\"}");
+        jsonString.add("{\"Issue / Num\\u00e9ro\": \"23\", \"Title, Analytic / Titre, Analytique\": \"An energetic perspective on hydrological cycle changes in the Geoengineering Model Intercomparison Project\", \"Page end / Derni\\u00e8re Page\": \"13102\", \"URL / Adresse URL   \": \"http://onlinelibrary.wiley.com/doi/10.1002/2013JD020502/abstract\", \"Publisher / Maison d'\\u00e9dition\": \"\", \"City / Ville\": \"\", \"Year / Ann\\u00e9e\": \"2013\", \"Page start / Premi\\u00e8re Page\": \"13087\", \"Document Type / Type de document\": \"Article\", \"DOI / Identificateur d'objet num\\u00e9rique\": \"10.1002/2013JD020502\", \"Title, Collective / Titre, Collectif\": \"Journal of Geophysical Research D: Atmospheres\", \"Editors / \\u00c9diteurs\": \"\", \"Title - Subordinate / Titre - Subalterne\": \"\", \"Volume - Chapter / Volume - Chapitre \": \"118\", \"\\ufeff\\\"Authors / Auteurs\\\"\": \"Kravitz B., Rasch P.J., Forster P.M., Andrews T., Cole J.N.S., Irvine P.J., Ji D., Kristjansson J.E., Moore J.C., Muri H., Niemeier U., Robock A., Singh B., Tilmes S. Watanabe S., Yoon J.-H.\"}");
 
 
         convertFromJson();
@@ -140,6 +143,14 @@ public class HomeActivity extends AppCompatActivity {
         documentSearch = (AutoCompleteTextView) findViewById(R.id.documentTypeSearch);
     }
 
+    private void ClearFields(){
+        analyticSearch.setText("");
+        collectiveSearch.setText("");
+        authorSearch.setText("");
+        publisherSearch.setText("");
+        documentSearch.setText("");
+    }
+
     private void SetAdapters(){
         analyticSearch.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, analyticTitles));
         collectiveSearch.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, collectiveTitles));
@@ -154,6 +165,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String target = analyticSearch.getText().toString();
+                analyticSearch.setText("");
                 int i =0;
                 for(String s : analyticTitles){
                     if(s.compareTo(target) == 0){
@@ -163,6 +175,101 @@ public class HomeActivity extends AppCompatActivity {
                 }
                 String article = gson.toJson(data.get(i));
                 Log.i("home", "" + i);
+                Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
+                intent.putExtra("article", article);
+                startActivity(intent);
+            }
+        });
+
+        collectiveSearch.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String target = collectiveSearch.getText().toString();
+                collectiveSearch.setText("");
+                int i = 0;
+                for(String s : collectiveTitles){
+                    if(s.compareTo(target)==0){
+                        break;
+                    }
+                    i++;
+                }
+                String article = gson.toJson(data.get(i));
+                Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
+                intent.putExtra("article", article);
+                startActivity(intent);
+            }
+        });
+
+        subordinateSearch.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String target = subordinateSearch.getText().toString();
+                subordinateSearch.setText("");
+                int i = 0;
+                for(String s : subordinateTitles){
+                    if(s.compareTo(target)==0){
+                        break;
+                    }
+                    i++;
+                }
+                String article = gson.toJson(data.get(i));
+                Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
+                intent.putExtra("article", article);
+                startActivity(intent);
+            }
+        });
+
+        authorSearch.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String target = authorSearch.getText().toString();
+                authorSearch.setText("");
+                int i = 0;
+                for(String s : authors){
+                    if(s.compareTo(target)==0){
+                        break;
+                    }
+                    i++;
+                }
+                String article = gson.toJson(data.get(i));
+                Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
+                intent.putExtra("article", article);
+                startActivity(intent);
+            }
+        });
+
+        publisherSearch.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String target = publisherSearch.getText().toString();
+                publisherSearch.setText("");
+                int i = 0;
+                for(String s : publishers){
+                    if(s.compareTo(target)==0){
+                        break;
+                    }
+                    i++;
+                }
+                String article = gson.toJson(data.get(i));
+                Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
+                intent.putExtra("article", article);
+                startActivity(intent);
+            }
+        });
+
+        documentSearch.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String target = documentSearch.getText().toString();
+                documentSearch.setText("");
+                int i = 0;
+                for(String s : documentTypes){
+                    if(s.compareTo(target)==0){
+                        break;
+                    }
+                    i++;
+                }
+                String article = gson.toJson(data.get(i));
                 Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
                 intent.putExtra("article", article);
                 startActivity(intent);
