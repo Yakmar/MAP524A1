@@ -1,6 +1,9 @@
 package com.example.nramkay.journalsearch;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
+//Generated using JSON2POJO.com
+
 public class Article {
 
     @SerializedName("Issue / Num\u00e9ro")
