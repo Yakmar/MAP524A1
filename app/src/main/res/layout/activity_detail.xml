@@ -250,22 +250,12 @@
         android:text="@string/placeholderText"
         android:id="@+id/detailDOI"/>
 
-    <TextView
+    <Button
+        android:id="@+id/urlButton"
+        android:text="@string/website"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="@string/url"
-        android:id="@+id/detailURLTextTitle"
-        android:layout_marginTop="35dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/placeholderText"
-        android:id="@+id/detailURL"/>
+        android:layout_gravity="center"/>
 
 </LinearLayout>
 

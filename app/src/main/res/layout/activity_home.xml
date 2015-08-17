@@ -43,7 +43,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/authorSearch"
-        android:hint="Author"
+        android:hint="Author(s)"
         android:layout_below="@+id/subordinateSearch"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -58,8 +58,8 @@
     <AutoCompleteTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/documentTypeSearch"
-        android:hint="Document Type"
+        android:id="@+id/editorSearch"
+        android:hint="Editor(s)"
         android:layout_below="@+id/publisherSearch"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />

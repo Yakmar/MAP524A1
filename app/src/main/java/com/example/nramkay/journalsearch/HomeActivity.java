@@ -31,13 +31,13 @@ public class HomeActivity extends AppCompatActivity {
     List<String> subordinateTitles = new ArrayList<>();
     List<String> authors = new ArrayList<>();
     List<String> publishers = new ArrayList<>();
-    List<String> documentTypes = new ArrayList<>();
+    List<String> editors = new ArrayList<>();
     AutoCompleteTextView analyticSearch;
     AutoCompleteTextView collectiveSearch;
     AutoCompleteTextView subordinateSearch;
     AutoCompleteTextView authorSearch;
     AutoCompleteTextView publisherSearch;
-    AutoCompleteTextView documentSearch;
+    AutoCompleteTextView editorSearch;
     File file;
 
     //http://donnees.ec.gc.ca/data/managementoversight/systems/environment-canada-lists-of-peer-reviewed-scientific-and-technical-publications/environment-canada-list-of-2013-peer-reviewed-scientific-and-technical-publications/Environment_Canada_2013_scientific_and_technical_publications_list.json
@@ -49,6 +49,9 @@ public class HomeActivity extends AppCompatActivity {
         String destPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/e_canada_2013.txt";
         file = new File(destPath);
 
+        /*This piece of code I left in despite not actually using the file at all.
+        * I wanted to demonstrate that I know how to download directly to the device using DownloadManager.
+        * Unfortunately, my attempts to properly parse the text file lead me to do some manual workarounds.*/
         if(!file.exists()) {
             String url = "http://donnees.ec.gc.ca/data/managementoversight/systems/environment-canada-lists-of-peer-reviewed-scientific-and-technical-publications/environment-canada-list-of-2013-peer-reviewed-scientific-and-technical-publications/Environment_Canada_2013_scientific_and_technical_publications_list.json";
             DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
@@ -62,6 +65,7 @@ public class HomeActivity extends AppCompatActivity {
             DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
             manager.enqueue(request);
         }
+
         InitializeData();
         GetHandles();
         ClearFields();
@@ -92,6 +96,14 @@ public class HomeActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /*This was the worst part of the assignment for me. Up to the night before the due date
+    * I couldn't find a solution for parsing the JSON text file provided by the government website.
+    * I ran into many problems that I will highlight in my documentation.
+    *
+    * My solution was to isolate the object strings manually (this is bad I know) in order to continue working
+    * on the actual app functionality. Up until this point I had not been able to work with an Article Object at all.
+    * After consulting with Brad Hoover & Stephen Ruthland I ended up keeping this solution as any work arounds would
+    * require too much time to reach a realistic submission date.*/
     private void InitializeData(){
         jsonString.add("{\"Issue / Num\\u00e9ro\": \"1-2\", \"Title, Analytic / Titre, Analytique\": \"\\\"The Rainmakers\\\": the Meteorological Service of Canada and post-war weather modification research\", \"Page end / Derni\\u00e8re Page\": \"37\", \"URL / Adresse URL   \": \"\", \"Publisher / Maison d'\\u00e9dition\": \"\", \"City / Ville\": \"\", \"Year / Ann\\u00e9e\": \"2013\", \"Page start / Premi\\u00e8re Page\": \"5\", \"Document Type / Type de document\": \"Article\", \"DOI / Identificateur d'objet num\\u00e9rique\": \"10.7202/1013979ar\", \"Title, Collective / Titre, Collectif\": \"Scientia Canadensis\", \"Editors / \\u00c9diteurs\": \"\", \"Title - Subordinate / Titre - Subalterne\": \"\", \"Volume - Chapter / Volume - Chapitre \": \"35\", \"\\ufeff\\\"Authors / Auteurs\\\"\": \"Wallace, M.L.\"}");
         jsonString.add("{\"Issue / Num\\u00e9ro\": \"2\", \"Title, Analytic / Titre, Analytique\": \"16-year simulation of arctic black carbon: Transport, source contribution, and sensitivity analysis on deposition\", \"Page end / Derni\\u00e8re Page\": \"964\", \"URL / Adresse URL   \": \"\", \"Publisher / Maison d'\\u00e9dition\": \"\", \"City / Ville\": \"\", \"Year / Ann\\u00e9e\": \"2013\", \"Page start / Premi\\u00e8re Page\": \"943\", \"Document Type / Type de document\": \"Article\", \"DOI / Identificateur d'objet num\\u00e9rique\": \"10.1029/2012JD017774\", \"Title, Collective / Titre, Collectif\": \"Journal of Geophysical Research: Atmospheres\", \"Editors / \\u00c9diteurs\": \"\", \"Title - Subordinate / Titre - Subalterne\": \"\", \"Volume - Chapter / Volume - Chapitre \": \"118\", \"\\ufeff\\\"Authors / Auteurs\\\"\": \"Sharma S., Ishizawa M., Chan D., Lavoue D., Andrews E., Eleftheriadis K., Maksyutov S.\"}");
@@ -115,11 +127,29 @@ public class HomeActivity extends AppCompatActivity {
         jsonString.add("{\"Issue / Num\\u00e9ro\": \"\", \"Title, Analytic / Titre, Analytique\": \"Arctic terrestrial biodiversity monitoring plan\", \"Page end / Derni\\u00e8re Page\": \"164\", \"URL / Adresse URL   \": \"http://www.caff.is/monitoring-series/256-arctic-terrestrial-biodiversity-monitoring-plan\", \"Publisher / Maison d'\\u00e9dition\": \"\", \"City / Ville\": \"\", \"Year / Ann\\u00e9e\": \"2013\", \"Page start / Premi\\u00e8re Page\": \"1\", \"Document Type / Type de document\": \"Report\", \"DOI / Identificateur d'objet num\\u00e9rique\": \"\", \"Title, Collective / Titre, Collectif\": \"CAFF Monitoring Series Report\", \"Editors / \\u00c9diteurs\": \"\", \"Title - Subordinate / Titre - Subalterne\": \"\", \"Volume - Chapter / Volume - Chapitre \": \"7\", \"\\ufeff\\\"Authors / Auteurs\\\"\": \"Christensen, T., J. Payne, M. Doyle, G. Ibarguchi, J.J. Taylor, N.M. Schmidt, M. Gill, M. Svoboda, M. Aronsson, C. Behe, C. Buddle, C. Cuyler, A.M. Fosaa, A.D. Fox, S. Heidmarsson, P. Henning Krogh, J. Madsen, D. McLennan, J. Nymand, C. Rosa, J. Salmela, R. Shuchman, M. Soloviev and M. Wedege\"}");
         jsonString.add("{\"Issue / Num\\u00e9ro\": \"\", \"Title, Analytic / Titre, Analytique\": \"An Analysis of Spatial and Temporal Trends and Patterns in Western Canadian Runoff: A CROCWR Component\", \"Page end / Derni\\u00e8re Page\": \"56\", \"URL / Adresse URL   \": \"http://www.19thnrb.com/docs/19thNRB_Proceedings_Web2013-9-19.pdf\", \"Publisher / Maison d'\\u00e9dition\": \"\", \"City / Ville\": \"\", \"Year / Ann\\u00e9e\": \"2013\", \"Page start / Premi\\u00e8re Page\": \"45\", \"Document Type / Type de document\": \"Conference Proceedings\", \"DOI / Identificateur d'objet num\\u00e9rique\": \"\", \"Title, Collective / Titre, Collectif\": \"Proceedings of the 19th International Northern Research Basins Symposium and Workshop\", \"Editors / \\u00c9diteurs\": \"\", \"Title - Subordinate / Titre - Subalterne\": \"\", \"Volume - Chapter / Volume - Chapitre \": \"\", \"\\ufeff\\\"Authors / Auteurs\\\"\": \"Bawden, A.J., D.H. Burn and T.D. Prowse\"}");
         jsonString.add("{\"Issue / Num\\u00e9ro\": \"23\", \"Title, Analytic / Titre, Analytique\": \"An energetic perspective on hydrological cycle changes in the Geoengineering Model Intercomparison Project\", \"Page end / Derni\\u00e8re Page\": \"13102\", \"URL / Adresse URL   \": \"http://onlinelibrary.wiley.com/doi/10.1002/2013JD020502/abstract\", \"Publisher / Maison d'\\u00e9dition\": \"\", \"City / Ville\": \"\", \"Year / Ann\\u00e9e\": \"2013\", \"Page start / Premi\\u00e8re Page\": \"13087\", \"Document Type / Type de document\": \"Article\", \"DOI / Identificateur d'objet num\\u00e9rique\": \"10.1002/2013JD020502\", \"Title, Collective / Titre, Collectif\": \"Journal of Geophysical Research D: Atmospheres\", \"Editors / \\u00c9diteurs\": \"\", \"Title - Subordinate / Titre - Subalterne\": \"\", \"Volume - Chapter / Volume - Chapitre \": \"118\", \"\\ufeff\\\"Authors / Auteurs\\\"\": \"Kravitz B., Rasch P.J., Forster P.M., Andrews T., Cole J.N.S., Irvine P.J., Ji D., Kristjansson J.E., Moore J.C., Muri H., Niemeier U., Robock A., Singh B., Tilmes S. Watanabe S., Yoon J.-H.\"}");
-
+        jsonString.add("{\"Issue / Num\\u00e9ro\": \"\", \"Title, Analytic / Titre, Analytique\": \"Analysis of present day and future OH and methane lifetime in the ACCMIP simulations\", \"Page end / Derni\\u00e8re Page\": \"2587\", \"URL / Adresse URL   \": \"http://www.atmos-chem-phys.net/13/2563/2013/acp-13-2563-2013.html\", \"Publisher / Maison d'\\u00e9dition\": \"\", \"City / Ville\": \"\", \"Year / Ann\\u00e9e\": \"2013\", \"Page start / Premi\\u00e8re Page\": \"2563\", \"Document Type / Type de document\": \"Article\", \"DOI / Identificateur d'objet num\\u00e9rique\": \"10.5194/acp-13-2563-2013\", \"Title, Collective / Titre, Collectif\": \"Atmospheric Chemistry and Physics\", \"Editors / \\u00c9diteurs\": \"\", \"Title - Subordinate / Titre - Subalterne\": \"\", \"Volume - Chapter / Volume - Chapitre \": \"13\", \"\\ufeff\\\"Authors / Auteurs\\\"\": \"A. Voulgarakis, V. Naik, J.-F. Lamarque, D. T. Shindell, P. J. Young, M. J. Prather, O. Wild, R. D. Field, D. Bergmann, P. Cameron-Smith, I. Cionni, W. J. Collins, S. B. Dals\\u00f8ren, R. M. Doherty, V. Eyring, G. Faluvegi, G. A. Folberth, L. W. Horowitz, B. Josse, I. A. MacKenzie, T. Nagashima, D. A. Plummer, M. Righi, S. T. Rumbold, D. S. Stevenson, S. A. Strode, K. Sudo, S. Szopa, and G. Zeng \"}");
+        jsonString.add("{\"Issue / Num\\u00e9ro\": \"\", \"Title, Analytic / Titre, Analytique\": \"Analytical delta-four-stream doubling-adding method for radiative transfer parameterizations\", \"Page end / Derni\\u00e8re Page\": \"808\", \"URL / Adresse URL   \": \"http://dx.doi.org/10.1175/JAS-D-12-0122.1\", \"Publisher / Maison d'\\u00e9dition\": \"\", \"City / Ville\": \"\", \"Year / Ann\\u00e9e\": \"2013\", \"Page start / Premi\\u00e8re Page\": \"794\", \"Document Type / Type de document\": \"\", \"DOI / Identificateur d'objet num\\u00e9rique\": \"\", \"Title, Collective / Titre, Collectif\": \"American Meteorological Society\", \"Editors / \\u00c9diteurs\": \"\", \"Title - Subordinate / Titre - Subalterne\": \"\", \"Volume - Chapter / Volume - Chapitre \": \"70\", \"\\ufeff\\\"Authors / Auteurs\\\"\": \"Feng Zhang, Zhongping Shen, Jiangnan Li, Xiuji Zhou, and Leiming Ma\"}");
+        jsonString.add("{\"Issue / Num\\u00e9ro\": \"\", \"Title, Analytic / Titre, Analytique\": \"Benthic Community Ecotoxicology\", \"Page end / Derni\\u00e8re Page\": \"180\", \"URL / Adresse URL   \": \"http://www.springer.com/gp/book/9789400750401\", \"Publisher / Maison d'\\u00e9dition\": \"Springer Publishing\", \"City / Ville\": \"London, UK\", \"Year / Ann\\u00e9e\": \"2013\", \"Page start / Premi\\u00e8re Page\": \"169\", \"Document Type / Type de document\": \"Book Chapter\", \"DOI / Identificateur d'objet num\\u00e9rique\": \"\", \"Title, Collective / Titre, Collectif\": \"In J.F. F\\u00e9rard and C. Blaise (eds.), Encyclopedia of Aquatic Ecotoxicology. Springer Publishers, London, UK.\", \"Editors / \\u00c9diteurs\": \"J.F. F\\u00e9rard and C. Blaise\", \"Title - Subordinate / Titre - Subalterne\": \"\", \"Volume - Chapter / Volume - Chapitre \": \"\", \"\\ufeff\\\"Authors / Auteurs\\\"\": \"Grapentine, L.\"}");
+        jsonString.add("{\"Issue / Num\\u00e9ro\": \"2\", \"Title, Analytic / Titre, Analytique\": \"Biomonitoring for the 21st Century: new perspectives in an age of globalisation and emerging environmental threats\", \"Page end / Derni\\u00e8re Page\": \"174\", \"URL / Adresse URL   \": \"http://www.limnetica.com/fulltext/Limnetica_32v2_2013.pdf\", \"Publisher / Maison d'\\u00e9dition\": \"\", \"City / Ville\": \"\", \"Year / Ann\\u00e9e\": \"2013\", \"Page start / Premi\\u00e8re Page\": \"159\", \"Document Type / Type de document\": \"Article\", \"DOI / Identificateur d'objet num\\u00e9rique\": \"\", \"Title, Collective / Titre, Collectif\": \"Limnetica\", \"Editors / \\u00c9diteurs\": \"\", \"Title - Subordinate / Titre - Subalterne\": \"\", \"Volume - Chapter / Volume - Chapitre \": \"32\", \"\\ufeff\\\"Authors / Auteurs\\\"\": \"Woodward, G., C. Gray and D.J. Baird\"}");
+        jsonString.add("{\"Issue / Num\\u00e9ro\": \"\", \"Title, Analytic / Titre, Analytique\": \"Canadian Arctic Contaminants Assessment Report (CACAR) III - Mercury\", \"Page end / Derni\\u00e8re Page\": \"276\", \"URL / Adresse URL   \": \"http://publications.gc.ca/site/eng/457558/publication.html\", \"Publisher / Maison d'\\u00e9dition\": \"\", \"City / Ville\": \"\", \"Year / Ann\\u00e9e\": \"2013\", \"Page start / Premi\\u00e8re Page\": \"1\", \"Document Type / Type de document\": \"Report\", \"DOI / Identificateur d'objet num\\u00e9rique\": \"\", \"Title, Collective / Titre, Collectif\": \"Canadian Arctic Contaminants Assessment Report (CACAR) III\", \"Editors / \\u00c9diteurs\": \"\", \"Title - Subordinate / Titre - Subalterne\": \"\", \"Volume - Chapter / Volume - Chapitre \": \"\", \"\\ufeff\\\"Authors / Auteurs\\\"\": \"Braune, B. and J. Chetelat\"}");
+        jsonString.add("{\"Issue / Num\\u00e9ro\": \"2\", \"Title, Analytic / Titre, Analytique\": \"Changes in Abundance and Distribution of Pelagic Cormorants Nesting on Triangle Island, British Columbia, 1949-2010\", \"Page end / Derni\\u00e8re Page\": \"166\", \"URL / Adresse URL   \": \"http://www.wildlifebc.org/pdfs/Pelagic%20Cormorants%20Triangle%20Island%20BC.pdf\", \"Publisher / Maison d'\\u00e9dition\": \"\", \"City / Ville\": \"\", \"Year / Ann\\u00e9e\": \"2013\", \"Page start / Premi\\u00e8re Page\": \"147\", \"Document Type / Type de document\": \"Article\", \"DOI / Identificateur d'objet num\\u00e9rique\": \"\", \"Title, Collective / Titre, Collectif\": \"Wildlife Afield\", \"Editors / \\u00c9diteurs\": \"\", \"Title - Subordinate / Titre - Subalterne\": \"\", \"Volume - Chapter / Volume - Chapitre \": \"8\", \"\\ufeff\\\"Authors / Auteurs\\\"\": \"Rodway. M.S., K.R. Summers, J.M. Hipfner, J.C. van Rooyen and R.W. Campbell\"}");
+        jsonString.add("{\"Issue / Num\\u00e9ro\": \"\", \"Title, Analytic / Titre, Analytique\": \"Chapter 1. Introduction\", \"Page end / Derni\\u00e8re Page\": \"17\", \"URL / Adresse URL   \": \"http://www.cripe.ca/Freeze-up_Book.html\", \"Publisher / Maison d'\\u00e9dition\": \"Committee on River Ice Processes and the Environment\", \"City / Ville\": \"Edmonton\", \"Year / Ann\\u00e9e\": \"2013\", \"Page start / Premi\\u00e8re Page\": \"1\", \"Document Type / Type de document\": \"Book Chapter\", \"DOI / Identificateur d'objet num\\u00e9rique\": \"\", \"Title, Collective / Titre, Collectif\": \"In S. Beltaos (eds.), River Ice Formation. Committe on River Ice Processes and the Environment, CGU-HS, Edmonton. .\", \"Editors / \\u00c9diteurs\": \"Beltaos, S.\", \"Title - Subordinate / Titre - Subalterne\": \"\", \"Volume - Chapter / Volume - Chapitre \": \"\", \"\\ufeff\\\"Authors / Auteurs\\\"\": \"Burrell, B.C. and S. Beltaos\"}");
+        jsonString.add("{\"Issue / Num\\u00e9ro\": \"\", \"Title, Analytic / Titre, Analytique\": \"Chapter 7. Freezeup jamming and formation of ice cover. \", \"Page end / Derni\\u00e8re Page\": \"296\", \"URL / Adresse URL   \": \"http://www.cripe.ca/Freeze-up_Book.html\", \"Publisher / Maison d'\\u00e9dition\": \"Committee on River Ice Processes and the Environment\", \"City / Ville\": \"Edmonton\", \"Year / Ann\\u00e9e\": \"2013\", \"Page start / Premi\\u00e8re Page\": \"181\", \"Document Type / Type de document\": \"Book Chapter\", \"DOI / Identificateur d'objet num\\u00e9rique\": \"\", \"Title, Collective / Titre, Collectif\": \"In S. Beltaos (ed.), River Ice Formation. Committee on River Ice Processes and the Environment, CGU-HS, Edmonton.\", \"Editors / \\u00c9diteurs\": \"Beltaos, S.\", \"Title - Subordinate / Titre - Subalterne\": \"\", \"Volume - Chapter / Volume - Chapitre \": \"\", \"\\ufeff\\\"Authors / Auteurs\\\"\": \"Beltaos, S.\"}");
+        jsonString.add("{\"Issue / Num\\u00e9ro\": \"\", \"Title, Analytic / Titre, Analytique\": \"Chapter 8. Thermal growth of ice cover\", \"Page end / Derni\\u00e8re Page\": \"296\", \"URL / Adresse URL   \": \"http://www.cripe.ca/Freeze-up_Book.html\", \"Publisher / Maison d'\\u00e9dition\": \"Committee on River Ice Processes and the Environment\", \"City / Ville\": \"Edmonton\", \"Year / Ann\\u00e9e\": \"2013\", \"Page start / Premi\\u00e8re Page\": \"257\", \"Document Type / Type de document\": \"Book Chapter\", \"DOI / Identificateur d'objet num\\u00e9rique\": \"\", \"Title, Collective / Titre, Collectif\": \"In S. Beltaos (ed.), River Ice Formation. Committe on River Ice Processes and the Environment, CGU-HS, Edmonton.\", \"Editors / \\u00c9diteurs\": \"Beltaos, S.\", \"Title - Subordinate / Titre - Subalterne\": \"\", \"Volume - Chapter / Volume - Chapitre \": \"\", \"\\ufeff\\\"Authors / Auteurs\\\"\": \"Ashton, G.D. and S. Beltaos\"}");
+        jsonString.add("{\"Issue / Num\\u00e9ro\": \"3\", \"Title, Analytic / Titre, Analytique\": \"Dendrohydroclimate reconstructions of July-August runoff for two nival-regime rivers in west central British Columbia\", \"Page end / Derni\\u00e8re Page\": \"420\", \"URL / Adresse URL   \": \"http://onlinelibrary.wiley.com/doi/10.1002/hyp.9257/abstract\", \"Publisher / Maison d'\\u00e9dition\": \"\", \"City / Ville\": \"\", \"Year / Ann\\u00e9e\": \"2013\", \"Page start / Premi\\u00e8re Page\": \"405\", \"Document Type / Type de document\": \"Article\", \"DOI / Identificateur d'objet num\\u00e9rique\": \"10.1002/hyp.9257\", \"Title, Collective / Titre, Collectif\": \"Hydrological Processes\", \"Editors / \\u00c9diteurs\": \"\", \"Title - Subordinate / Titre - Subalterne\": \"\", \"Volume - Chapter / Volume - Chapitre \": \"27\", \"\\ufeff\\\"Authors / Auteurs\\\"\": \"Starheim C.C.A., Smith D.J., Prowse T.D.\"}");
+        jsonString.add("{\"Issue / Num\\u00e9ro\": \"\", \"Title, Analytic / Titre, Analytique\": \"Ecotoxicogenomics\", \"Page end / Derni\\u00e8re Page\": \"362\", \"URL / Adresse URL   \": \"http://link.springer.com/referenceworkentry/10.1007/978-94-007-5704-2_34\", \"Publisher / Maison d'\\u00e9dition\": \"Springer Publishing\", \"City / Ville\": \"London,UK.\", \"Year / Ann\\u00e9e\": \"2013\", \"Page start / Premi\\u00e8re Page\": \"353\", \"Document Type / Type de document\": \"Book Chapter\", \"DOI / Identificateur d'objet num\\u00e9rique\": \"\", \"Title, Collective / Titre, Collectif\": \"Encyclopedia of Aquatic Ecotoxicology F\\u00e9rard J.-F. & Blaise C. Eds.\", \"Editors / \\u00c9diteurs\": \" F\\u00e9rard J.-F. & Blaise C. \", \"Title - Subordinate / Titre - Subalterne\": \"\", \"Volume - Chapter / Volume - Chapitre \": \"\", \"\\ufeff\\\"Authors / Auteurs\\\"\": \"Osachoff, H.L. and van Aggelen, G.C.\"}");
+        jsonString.add("{\"Issue / Num\\u00e9ro\": \"\", \"Title, Analytic / Titre, Analytique\": \"Effect of anthropogenic land-use and land-cover changes on climate and land carbon storage in CMIP5 projections for the twenty-first century\", \"Page end / Derni\\u00e8re Page\": \"6881\", \"URL / Adresse URL   \": \"\", \"Publisher / Maison d'\\u00e9dition\": \"\", \"City / Ville\": \"\", \"Year / Ann\\u00e9e\": \"2013\", \"Page start / Premi\\u00e8re Page\": \"6859\", \"Document Type / Type de document\": \"\", \"DOI / Identificateur d'objet num\\u00e9rique\": \" http://dx.doi.org/10.1175/JCLI-D-12-00623.1\", \"Title, Collective / Titre, Collectif\": \"American Meteorological Society\", \"Editors / \\u00c9diteurs\": \"\", \"Title - Subordinate / Titre - Subalterne\": \"\", \"Volume - Chapter / Volume - Chapitre \": \"26\", \"\\ufeff\\\"Authors / Auteurs\\\"\": \"V. Brovkin, L. Boysen, V. K. Arora, J. P. Boisier, P. Cadule, L. Chini, M. Claussen, P. Friedlingstein, V. Gayler, B. J. J. M. van den Hurk, G. C. Hurtt, C. D. Jones, E. Kato, N. de Noblet-Ducoudr\\u00e9, F. Pacifico, J. Pongratz, and M. Weiss\"}");
+        jsonString.add("{\"Issue / Num\\u00e9ro\": \"1\", \"Title, Analytic / Titre, Analytique\": \"Flight times and abundance of three shorebird species staging near Chickney Channel, James Bay, Ontario, summer 2012\", \"Page end / Derni\\u00e8re Page\": \"23\", \"URL / Adresse URL   \": \"http://www.ofo.ca/site/download/id/2\", \"Publisher / Maison d'\\u00e9dition\": \"\", \"City / Ville\": \"\", \"Year / Ann\\u00e9e\": \"2013\", \"Page start / Premi\\u00e8re Page\": \"10\", \"Document Type / Type de document\": \"Article\", \"DOI / Identificateur d'objet num\\u00e9rique\": \"\", \"Title, Collective / Titre, Collectif\": \"Ontario Birds\", \"Editors / \\u00c9diteurs\": \"\", \"Title - Subordinate / Titre - Subalterne\": \"\", \"Volume - Chapter / Volume - Chapitre \": \"31\", \"\\ufeff\\\"Authors / Auteurs\\\"\": \"Friis, C., K.G. Burrell and S. Mackenzie\"}");
 
         convertFromJson();
     }
 
+    //Accepts a ListArray<String> full of JSON strings.
+    //Using Gson, it converts each string into an Article object and
+    //adds them to a List of Articles.
+    //
+    //The function also creates Lists of all the possible search terms
+    //for each category (Titles, Authors, Publishers, etc..).
     private void convertFromJson(){
         for(String s : jsonString){
             data.add(gson.fromJson(s, Article.class));
@@ -130,36 +160,45 @@ public class HomeActivity extends AppCompatActivity {
             subordinateTitles.add(a.getTitleSubordinateTitreSubalterne());
             authors.add(a.getAuthorsAuteurs());
             publishers.add(a.getPublisherMaisonDDition());
-            documentTypes.add(a.getDocumentTypeTypeDeDocument());
+            editors.add(a.getEditorsDiteurs());
         }
     }
 
+    //Adds all the proper handles for each piece of the view using the correct ids
     private void GetHandles(){
         analyticSearch = (AutoCompleteTextView) findViewById(R.id.analyticSearch);
         collectiveSearch = (AutoCompleteTextView) findViewById(R.id.collectiveSearch);
         subordinateSearch = (AutoCompleteTextView) findViewById(R.id.subordinateSearch);
         authorSearch = (AutoCompleteTextView) findViewById(R.id.authorSearch);
         publisherSearch = (AutoCompleteTextView) findViewById(R.id.publisherSearch);
-        documentSearch = (AutoCompleteTextView) findViewById(R.id.documentTypeSearch);
+        editorSearch = (AutoCompleteTextView) findViewById(R.id.editorSearch);
     }
 
+    /*Some of the terms are so long it is annoying to have to delete them if you want a different
+    * article. */
     private void ClearFields(){
         analyticSearch.setText("");
         collectiveSearch.setText("");
         authorSearch.setText("");
         publisherSearch.setText("");
-        documentSearch.setText("");
+        editorSearch.setText("");
     }
 
+    /*Sets all the proper adapters to each of the different AutoCompleteTextViews.*/
     private void SetAdapters(){
         analyticSearch.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, analyticTitles));
         collectiveSearch.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, collectiveTitles));
         subordinateSearch.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, subordinateTitles));
         authorSearch.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, authors));
         publisherSearch.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, publishers));
-        documentSearch.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, documentTypes));
+        editorSearch.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, editors));
     }
 
+    /*Set listeners to each AutoCompleteTextView that, on click, will start
+    * a DetailActivity by loading the Intent with the correct JSON string of
+    * the term searched. We do this by cross-referencing the search term with
+    * the position in the ListArray. Then grabbing the correct JSON string and giving
+    * it to the DetailActivity.*/
     private void SetItemClickListeners(){
         analyticSearch.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -257,13 +296,13 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        documentSearch.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        editorSearch.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String target = documentSearch.getText().toString();
-                documentSearch.setText("");
+                String target = editorSearch.getText().toString();
+                editorSearch.setText("");
                 int i = 0;
-                for(String s : documentTypes){
+                for(String s : editors){
                     if(s.compareTo(target)==0){
                         break;
                     }
